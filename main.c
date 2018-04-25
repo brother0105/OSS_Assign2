@@ -42,11 +42,23 @@ void filestat2(void)
 //파일 1의 시간 정보를 가져오는 함수 작성
 void filetime1(void)
 {
+	char timebuf[100] = { 0 };
+	struct stat buf;
+
+	stat("text1", &buf);
+
+	printf("Mtime = %d\n", (int)buf.st_mtime);
 }
 
 //파일 2의 시간 정보를 가져오는 함수 작성
 void filetime2(void)
 {
+        char timebuf[100] = { 0 };
+        struct stat buf;
+
+        stat("text2", &buf);
+
+	printf("Mtime = %d\n", (int)buf.st_mtime);
 }
 
 //두 개의 파일 크기를 비교하는 함수 작성
